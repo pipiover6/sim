@@ -1,10 +1,9 @@
 import numpy as np
 import scipy as sc
 
-def normalFromUniform(n=1):
-  theta = 2 * np.pi * np.random.uniform(size=n)
-  r = np.sqrt(-2 * np.log(np.random.uniform(size=n)))
-  return np.multiply(r, np.cos(theta))
+def normalFromUniform(size=None):
+  theta = 2 * np.pi * np.random.uniform(size=size)
+  r = np.sqrt(-2 * np.log(np.random.uniform(size=size)))
 
 def test():
 	M=8000
