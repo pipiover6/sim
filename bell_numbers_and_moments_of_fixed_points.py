@@ -34,3 +34,28 @@ for i in range(10):
 np.set_printoptions(suppress=True)
 
 print(A)
+
+
+# returns the number of partitions of [k] into at most n sets, using precomputed Bell values B
+def get_bell(n,k,B):
+    if k==0:
+        ret = 1
+    elif k > 0 and n == 0:
+        ret = 0
+    else:
+        ret = 0
+        for j in range(k):
+            ret += (B[n-1][k-1-j] * fact(k-1) / (fact(j)*fact(k-1-j)))
+
+    B[n][k] = ret
+    return ret
+
+
+B = np.zeros((10,10))
+
+for n in range(10):
+    for k in range(10):
+        get_bell(n,k,B)
+
+print(B)
+print((A==B).all())
