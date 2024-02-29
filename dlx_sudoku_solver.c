@@ -340,23 +340,6 @@ static u32 find_exact_covers(boolean* mat, u32 nrows, u32 ncols, boolean stop_at
     return ret;   
 }
 
-/*
-
-u32 main()
-{
-    boolean mat[6 * 2] = {  1,1,
-                            1,1,
-                            0,1,
-                            1,0,
-                            0,1,
-                            0,0};
-                          
-    u32 a = find_exact_covers(mat, 6, 2, 0, GORNISHT);    
-    printf("num solutions %d\n", a);
-    return 0;
-}
-
-*/
 
 static void sudoku_ecm_helper(boolean* ecm, u32 s_col, u32 s_row, u32 s_idx, u32 s_box, u32 s_val)
 {
